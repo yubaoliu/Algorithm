@@ -2,29 +2,45 @@
 #define ElementType int
 
 void InsertionSort(ElementType A[],int N);
+void printArray(ElementType arr[],int n);
 
 int main()
 {
   int A[]={34,8,64,51,32,21};
-  InsertionSort(A, 6);
-  for(int i=0; i<6; i++)
-  {
-    printf("%d ",A[i]);
-  }
-  printf("\n");
 
+  int n=sizeof(A)/sizeof(A[0]);
+
+  printf("Before insertion sort\n");
+
+  printArray(A, n);
+
+  InsertionSort(A,n);
+
+
+  printf("After insertion sort\n");
+
+  printArray(A, n);
 }
 
-void InsertionSort(ElementType A[],int N)
+void InsertionSort(ElementType arr[],int n)
 {
-  ElementType tmp;
-  for(int i=1; i< N; i++)//unsorted subarray, i:1->N-1
+  ElementType key,i,j;
+  for( i=1; i< n; i++)//unsorted subarray, i:1->N-1
   {
-    tmp=A[i];
+    key=arr[i];
 
-    for(int j=i; j>0 && tmp>=A[j];j--)//sorted subarray, j:i->0
+    for( j=i-1; j>=0 && key<=arr[j];j--)//sorted subarray, j:i->0
     {
-      A[j]=tmp;
+      arr[j+1]=arr[j];
     }
+    arr[j+1]=key;
   }
+}
+
+void printArray(ElementType arr[],int n)
+{
+  int i;
+  for (i=0;i<n;i++)
+    printf("%d ",arr[i]); //ElementType:int
+  printf("\n");
 }
