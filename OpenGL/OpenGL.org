@@ -1,0 +1,18 @@
+* Installation
+** Installing GLEW
+ GLEW is available from its main website at http://glew.sourceforge.net/. Most Linux distributions provide prebuilt packages for it. On Ubuntu you can install it by running the following from the command line:
+#+BEGIN_SRC shell
+sudo apt-get install libglew1.6 libglew1.6-dev
+#+END_SRC
+In order to link the program with GLEW you need to add '-lGLEW' to the makefile.
+
+* Background knowledges
+** Coordinate and rasterizer
+The rasterizer (that actually draws points, lines and triangles using screen coordinates) the visible vertices have their X, Y and Z coordinates in the range [-1.0,1.0]. The rasterizer maps these coordinates to screen space (e.g, if the screen width is 1024 then the X coodinate -1.0 is mapped to 0 and 1.0 is mapped to 1023). In fact, selecting zero for both X and Y places the vertex in the exact midpoint of both axis - in other words, the middle of the screen.In fact, selecting zero for both X and Y places the vertex in the exact midpoint of both axis - in other words, the middle of the screen.
+
+* Programming skills
+** Include <GL/glew.h>
+If you include other OpenGL headers you must be careful to include this file before the others else GLEW will complain that about it. In order to link the program with GLEW you need to add '-lGLEW' to the makefile.
+
+
+

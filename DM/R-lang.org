@@ -1,0 +1,29 @@
+* Installation
+** How To Install R on Ubuntu 16.04
+Refert to: https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2
+
+* R language basics
+#+BEGIN_SRC R
+
+//Create a Vector
+
+> v <- c(1,4,4,3,2,2,3)
+> v
+[1] 1 4 4 3 2 2 3
+
+> w = c("apple", "orange", "banana")
+> w
+[1] "apple"  "orange" "banana"
+
+//Return certainelements
+
+> w[c(1,2)]
+[1] "apple"  "orange"
+
+
+#+END_SRC
+
+
+* Reference
+- [[https://cran.r-project.org/index.html][Comprehensive R Archive Network (CRAN)]]
+- [[http://www.cookbook-r.com/][R-cookbook]]
