@@ -1,0 +1,73 @@
+* ML Foundation
+** Foundation Oriented ML Course
+Story-like:
+
+- When can machines learn?
+- Why can machines learn?
+- How can machines learn?
+- How can machines learn better?
+
+** From Learning to Machine Learning
+> Learning
+
+with experience accumulated from observations
+
+observations ----> Learning ---> skill
+
+> machine learning: acquiring skill
+with experience accumulated/computed from data
+
+data---> ML --->skill
+
+> skill
+
+improve some performance measure
+
+data ---> ML ---> improved performance measure
+
+An application computational finance:
+
+stock data ---> ML ---> more investment gain
+
+Yet Another Application: Tree Recognition
+
+** Key Essence of Machine Learning
+- exists some 'underlying patten' to be learned
+  so 'performance measure' can be improved
+
+- but no programmable definition
+  so 'ML' needed
+
+- somehow there is data about the pattern
+  so ML has some inputs to learn from
+
+** ML vs AI vs DM vs Statistics
+*Machine Learning*: use data to compute hypothesis $g$ 
+that approximates target $f$
+
+*Artificial Intelligence*:
+Compute something that shows intelligence behavior
+
+ML is one possible route to realize AI
+
+*Data Mining*:
+use (huge) data to find property that is interesting
+
+*Statistics*:
+use data to make inference about an unknown process
+
+statistics can be used to achieve ML
+** The Learning Model
+#+CAPTION: The Learning Model - credit card
+#+NAME: fig:the-learning-model-bank-credit.png
+[[file:./img/the-learning-model-bank-credit.png]]
+
+
+
+
+
+
+
+
+
+
