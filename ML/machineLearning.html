@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-11-15 Wed 07:20 -->
+<!-- 2017-11-15 Wed 08:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -255,24 +255,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc7b58a7">1. ML Foundation</a>
+<li><a href="#org10bdb96">1. ML Foundation</a>
 <ul>
-<li><a href="#org369995a">1.1. Foundation Oriented ML Course</a></li>
-<li><a href="#orgbd59968">1.2. From Learning to Machine Learning</a></li>
-<li><a href="#orgbe2f8af">1.3. Key Essence of Machine Learning</a></li>
-<li><a href="#org180f6f2">1.4. ML vs AI vs DM</a></li>
-<li><a href="#org7686389">1.5. The Learning Model</a></li>
+<li><a href="#org6c9d84d">1.1. Foundation Oriented ML Course</a></li>
+<li><a href="#org4698780">1.2. From Learning to Machine Learning</a></li>
+<li><a href="#org5ffa668">1.3. Key Essence of Machine Learning</a></li>
+<li><a href="#org155410c">1.4. ML vs AI vs DM vs Statistics</a></li>
+<li><a href="#org379f6b5">1.5. The Learning Model</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc7b58a7" class="outline-2">
-<h2 id="orgc7b58a7"><span class="section-number-2">1</span> ML Foundation</h2>
+<div id="outline-container-org10bdb96" class="outline-2">
+<h2 id="org10bdb96"><span class="section-number-2">1</span> ML Foundation</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org369995a" class="outline-3">
-<h3 id="org369995a"><span class="section-number-3">1.1</span> Foundation Oriented ML Course</h3>
+<div id="outline-container-org6c9d84d" class="outline-3">
+<h3 id="org6c9d84d"><span class="section-number-3">1.1</span> Foundation Oriented ML Course</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Story-like:
@@ -287,8 +287,8 @@ Story-like:
 </div>
 </div>
 
-<div id="outline-container-orgbd59968" class="outline-3">
-<h3 id="orgbd59968"><span class="section-number-3">1.2</span> From Learning to Machine Learning</h3>
+<div id="outline-container-org4698780" class="outline-3">
+<h3 id="org4698780"><span class="section-number-3">1.2</span> From Learning to Machine Learning</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 &gt; Learning
@@ -337,8 +337,8 @@ Yet Another Application: Tree Recognition
 </div>
 </div>
 
-<div id="outline-container-orgbe2f8af" class="outline-3">
-<h3 id="orgbe2f8af"><span class="section-number-3">1.3</span> Key Essence of Machine Learning</h3>
+<div id="outline-container-org5ffa668" class="outline-3">
+<h3 id="org5ffa668"><span class="section-number-3">1.3</span> Key Essence of Machine Learning</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>exists some 'underlying patten' to be learned
@@ -353,24 +353,68 @@ so ML has some inputs to learn from</li>
 </div>
 </div>
 
-<div id="outline-container-org180f6f2" class="outline-3">
-<h3 id="org180f6f2"><span class="section-number-3">1.4</span> ML vs AI vs DM</h3>
+<div id="outline-container-org155410c" class="outline-3">
+<h3 id="org155410c"><span class="section-number-3">1.4</span> ML vs AI vs DM vs Statistics</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 <b>Machine Learning</b>: use data to compute hypothesis \(g\) 
 that approximates target \(f\)
 </p>
-</div>
-</div>
 
-<div id="outline-container-org7686389" class="outline-3">
-<h3 id="org7686389"><span class="section-number-3">1.5</span> The Learning Model</h3>
+<p>
+<b>Artificial Intelligence</b>:
+Compute something that shows intelligence behavior
+</p>
+
+<p>
+ML is one possible route to realize AI
+</p>
+
+<p>
+<b>Data Mining</b>:
+use (huge) data to find property that is interesting
+</p>
+
+<p>
+<b>Statistics</b>:
+use data to make inference about an unknown process
+</p>
+
+<p>
+statistics can be used to achieve ML
+</p>
+</div>
+</div>
+<div id="outline-container-org379f6b5" class="outline-3">
+<h3 id="org379f6b5"><span class="section-number-3">1.5</span> The Learning Model</h3>
 <div class="outline-text-3" id="text-1-5">
 
-<div id="org1bcc81f" class="figure">
+<div id="orga0c1bab" class="figure">
 <p><img src="./img/the-learning-model-bank-credit.png" alt="the-learning-model-bank-credit.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>The Learning Model - credit card</p>
+</div>
+
+<div id="org3890578" class="figure">
+<p><img src="./img/the-learning-model-bank-credit-perceptron.png" alt="the-learning-model-bank-credit-perceptron.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Vector form of perceptron hypothesis- creditcardN</p>
+</div>
+
+\begin{equation}
+\begin{aligned}
+h(x) & = sign(\sum_{i=1}^{d}w_ix_i)-threshold)  \\
+&    = sign(\sum_{i=1}^{d}w_ix_i)+(-threshold)(+1)) \\
+&    = sign(\sum_{i=0}^{d}w_ix_i)                   \\
+&    = sign(w^{T}X)                                 \\
+x_0 = -1, w_0 = -threshold
+\end{aligned}
+\end{equation}
+
+<div id="org1aace1f" class="figure">
+<p><img src="./img/the-learning-model-bank-credit-perceptron.png" alt="the-learning-model-bank-credit-perceptron.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Bank Credit Perceptron Result in R*R</p>
 </div>
 </div>
 </div>
@@ -378,7 +422,7 @@ that approximates target \(f\)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: yubao</p>
-<p class="date">Created: 2017-11-15 Wed 07:20</p>
+<p class="date">Created: 2017-11-15 Wed 08:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
