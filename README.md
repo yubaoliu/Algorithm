@@ -5,7 +5,6 @@
 * Java
 
 # Machine Learning
-My note: https://yubaoliu.github.io/Algorithm/ML/machineLearning.html
-
+My note: [MachineLearning](https://yubaoliu.github.io/Algorithm/ML/machineLearning.html)
 # Data Mining
-My note: https://yubaoliu.github.io/Algorithm/DM/R-lang.html
+    My note: [R-lang](https://yubaoliu.github.io/Algorithm/DM/R-lang.html)
