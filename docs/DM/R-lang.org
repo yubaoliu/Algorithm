@@ -1,0 +1,40 @@
+* Installation
+** How To Install R on Ubuntu 16.04
+Refert to: https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2
+
+* R language basics
+** Indexing into a data structure
+ #+BEGIN_SRC R
+#!/usr/bin/env Rscript 
+ v <- c(1,4,4,3,2,2,3)
+ v[c(1:3)]
+#+END_SRC
+
+#+RESULTS:
+| 1 |
+| 4 |
+| 4 |
+
+ #+BEGIN_SRC R
+ w = c("apple", "orange", "banana")
+ w[c(1,2)]
+#+END_SRC
+
+#+RESULTS:
+| apple  |
+| orange |
+
+** Making avector filled with values
+#+BEGIN_SRC R
+rep(1,5)
+rep(F,20)
+rep(1:5,4)
+rep(1:5, each=4)
+rep(factor(LETTERS[1:3]), 5)
+#+END_SRC
+
+
+* Reference
+- [[https://cran.r-project.org/index.html][Comprehensive R Archive Network (CRAN)]]
+- [[http://www.cookbook-r.com/][R-cookbook]]
+
