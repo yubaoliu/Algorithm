@@ -1,3 +1,4 @@
+\usepackage{amsmath}
 * Algorithm
 ** Sorting Overview
 
@@ -85,9 +86,78 @@ Auxiliary Space: O(1)
 *** What is Binary Insertion Sort?
 We can use binary search to reduce the number of comparisons in normal insertion sort. Binary Insertion Sort find use binary search to find the proper location to insert the selected item at each iteration. In normal insertion, sort it takes O(i) (at ith iteration) in worst case. we can reduce it to O(logi) by using binary search. The algorithm as a whole still has a running worst case running time of O(n2) because of the series of swaps required for each insertion. Refer [[http://www.geeksforgeeks.org/binary-insertion-sort/][this]] for implementation.
 
+** Fibonacci sequence
+\begin{equation}
+a_1 = 1 \\
+a_2 = 1 \\
+a_{n+2} = a_n + a_{n+1}
+\end{equation}
+
+#+LATEX:\begin{equation}
+\begin{bmatrix}
+a_n \\
+a_n+1
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+0 & 1 \\
+1 & 1
+\end{bmatrix}^{n-1}
+
+*
+
+\begin{bmatrix}
+a_1 \\
+a_2 
+\end{bmatrix}
+#+LATEX:\end{equation}
+#+BEGIN_SRC C
+/*
+ Fibnacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+ Assume a(1)=1; a(2)=1; a(n+2)= a(n) + a(n+1)
+ Please Calculate a(n)
+ Algorithm:
+ (a_n; a_n+1) = (0 1; 1 1)^(n-1) * (a_1 ; a_2)
+*/
+#include <stdio.h>
+int fabonacci(int n)
+{
+    if(n<=2)
+        return 1;
+    int current[2]={1,1};
+    int next[2]={0,0};
+    for(int i=0;i<n-1;i++)
+    {
+        next[0]=0*current[0]+1*current[1];  
+        next[1]=1*current[0]+1*current[1];
+        current[0]=next[0];
+        current[1]=next[1];
+    }
+    return current[0];   
+}
+
+int main(int argc, char *argv[])
+{
+    printf("n=3, result= %d \n",fabonacci(3));
+    printf("n=6, result= %d \n",fabonacci(6));
+    return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+| n=3 | result= 2 |
+| n=6 | result= 8 |
 
 * Reference
 1. [[http://interactivepython.org/courselib/static/pythonds/index.html][Problem Solving with Algorithms and Data Structures using Python]]
 2. [[https://www.khanacademy.org/computing/computer-science/algorithms/][khanacademy-algorithms]]
 3. [[http://www.geeksforgeeks.org/insertion-sort/][geeksforgeeks insertion sort]]
 4. [[https://www.hackerearth.com/zh/practice/notes/sorting-and-searching-algorithms-time-complexities-cheat-sheet/][TimeComplexity Cheat Sheet for sorting and searching]]
+5. Youtube MIT vedio:
+    There are three courses to be taken in order. Intro, Design & Analysis, and Advanced. Here are the YouTube playlists for each: 
+   - Intro: https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb
+   - Design: https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp
+   - Advanced: https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c
+   - View the complete course at: http://ocw.mit.edu/6-046JF05 

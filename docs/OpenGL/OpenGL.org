@@ -5,7 +5,10 @@
 sudo apt-get install libglew1.6 libglew1.6-dev
 #+END_SRC
 In order to link the program with GLEW you need to add '-lGLEW' to the makefile.
-
+** Linux environment
+#+BEGIN_SRC shell
+  sudo apt install cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libxcursor-dev libxinerama-dev libxi-dev
+#+END_SRC
 * Background knowledges
 ** Coordinate and rasterizer
 The rasterizer (that actually draws points, lines and triangles using screen coordinates) the visible vertices have their X, Y and Z coordinates in the range [-1.0,1.0]. The rasterizer maps these coordinates to screen space (e.g, if the screen width is 1024 then the X coodinate -1.0 is mapped to 0 and 1.0 is mapped to 1023). In fact, selecting zero for both X and Y places the vertex in the exact midpoint of both axis - in other words, the middle of the screen.In fact, selecting zero for both X and Y places the vertex in the exact midpoint of both axis - in other words, the middle of the screen.
@@ -14,5 +17,8 @@ The rasterizer (that actually draws points, lines and triangles using screen coo
 ** Include <GL/glew.h>
 If you include other OpenGL headers you must be careful to include this file before the others else GLEW will complain that about it. In order to link the program with GLEW you need to add '-lGLEW' to the makefile.
 
+* Tutorial
+** Tutorial 1 : Opening a window
+Refer to http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/ for detail.
 
 
