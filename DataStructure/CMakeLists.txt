@@ -9,4 +9,4 @@ set(INSTALL_BIN_DIR bin CACHE PATH "Installation directory for executables")
 
 file(GLOB SRC LIST_DIRECTORIES false "src/*")
 
-add_executable(DataStructure ${SRC})
+# add_executable(DataStructure ${SRC})
