@@ -7,6 +7,7 @@ graph = {
     "F": ["D"]
 }
 
+
 def BFS(graph, start):
     queue = []
     queue.append(start)
@@ -20,6 +21,7 @@ def BFS(graph, start):
                 queue.append(w)
                 seen.add(w)
         print(vertex)
+
 
 print(graph.keys())
 print(graph["E"])

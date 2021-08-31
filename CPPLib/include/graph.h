@@ -3,129 +3,40 @@
 
 #include "common.h"
 
-template <class T>
+struct Edge
+{
+    int src;
+    int dst;
+    int weight;
+    Edge(int src, int dst, int weight)
+    {
+        this->src = src;
+        this->dst = dst;
+        this->weight = weight;
+    }
+};
+
 class Graph
 {
 private:
-    int V;             // No. of vertices
-    std::list<T> *adj; // Pointer to an array containing adjacency lists
-    // std::vector<T> *adj;
+    int V; // No. of vertices
+           // std::list<int> *adj; // Pointer to an array containing adjacency lists
+           // std::vector<int> *adj;
+           // int **graph; // graph[][], adjacency matrix representation
+    int minDistance(int dist[], bool sptSet[], int V);
+
 public:
-    Graph(int V);
+    Graph(int V);                                                // link list
+    Graph(std::list<int> *adj, std::vector<Edge> &edges, int V); // link list
     ~Graph();
-    void BFS(T start);
-    void DFS(T start);
-    void addDirectedEdge(T v, T w);
-    void addUndirectedEdge(T v, T w);
-    void printGraph();
+    void BFS(std::list<int> *adj, int start, int parent_out[]);
+    void BFS(std::list<int> *adj, int start);
+    void DFS(std::list<int> *adj, int start);
+    void BFS_shortest_path(std::list<int> *adj, int start, int end);
+    void addEdge(std::list<int> *adj, int src, int dst);
+    void addUndirectedEdge(std::list<int> *adj, int v, int w);
+    void printGraph(std::list<int> *adj);
+    void dijkstra(int **graph, int src, int V);
 };
-
-template <class T>
-void Graph<T>::DFS(T start)
-{
-    std::stack<T> q;
-    bool *visited = new bool[this->V];
-    for (int i = 0; i < this->V; i++)
-    {
-        visited[i] = false;
-    }
-    q.push(start);
-    while (!q.empty())
-    {
-        T f = q.top();
-        q.pop();
-        visited[f] = true;
-        for (typename std::list<T>::iterator it = adj[f].begin(); it != adj[f].end(); it++)
-        {
-            if (!visited[*it])
-            {
-                q.push(*it);
-                visited[*it] = true;
-            }
-        }
-        std::cout << f << " ";
-    }
-    std::cout << std::endl;
-}
-
-template <class T>
-void Graph<T>::BFS(T start)
-{
-    std::queue<T> q;
-    bool *visited = new bool[this->V];
-    for (int i = 0; i < this->V; i++)
-    {
-        visited[i] = false;
-    }
-    q.push(start);
-    while (!q.empty())
-    {
-        T f = q.front();
-        q.pop();
-        visited[f] = true;
-        for (typename std::list<T>::iterator it = adj[f].begin(); it != adj[f].end(); it++)
-        {
-            if (!visited[*it])
-            {
-                q.push(*it);
-                visited[*it] = true;
-            }
-        }
-        std::cout << f << " ";
-    }
-    std::cout << std::endl;
-}
-
-template <class T>
-Graph<T>::Graph(int V)
-{
-    this->V = V;
-    adj = new std::list<T>[V];
-}
-
-template <class T>
-void Graph<T>::addDirectedEdge(T v, T w)
-{
-    // add w to v's list, directed graph
-    adj[v].push_back(w);
-}
-
-template <class T>
-void Graph<T>::addUndirectedEdge(T v, T w)
-{
-    // add w to v's list, directed graph
-    adj[v].push_back(w);
-    adj[w].push_back(v);
-}
-
-template <class T>
-void Graph<T>::printGraph()
-{
-    std::cout << "\nAdjacency list of vertex. Total Num.:" << V << " \n";
-    for (int v = 0; v < this->V; v++)
-    {
-        std::cout << v << ": ";
-        for (typename std::list<T>::iterator it = adj[v].begin(); it != adj[v].end(); it++)
-        {
-            T vertex = *it;
-            std::cout << " -> " << vertex;
-        }
-        std::cout << "\n";
-    }
-    std::cout << std::endl;
-}
-
-template <class T>
-Graph<T>::~Graph()
-{
-    for (int v = 0; v < this->V; v++)
-    {
-        typename std::list<T>::iterator it = adj[v].begin();
-        while (it != adj[v].end())
-        {
-            it = adj[v].erase(it);
-        }
-    }
-}
 
 #endif
