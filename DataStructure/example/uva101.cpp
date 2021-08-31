@@ -88,7 +88,6 @@ void print()
         }
         cout << endl;
     }
-    cout << endl;
 }
 
 int main()

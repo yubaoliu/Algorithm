@@ -6,7 +6,7 @@ int main()
 {
     int cnt = 0;
     string s;
-    getline(cin, s);
+    getline(cin, s); // 无换行符
     for (size_t i = 0; i < s.length(); i++)
         if (s[i] != ' ')
             cnt++;
