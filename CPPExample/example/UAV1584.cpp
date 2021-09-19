@@ -14,13 +14,13 @@ bool les(int p, int q)
 int main()
 {
     cin >> n;
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> s;
         len = s.length();
-        string mins = s;
+        string mins = s; //记录最短串
         int ans = 0; //最小串的开始位置
-        s += s;
+        s += s; //拼接字符串, 环状->直线
         // for (int j = 1; j < len; j++)
         // {
         //     string sc = s.substr(j, len);

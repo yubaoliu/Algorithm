@@ -23,7 +23,7 @@ void prefix_table(char pattern[], int prefix[], int n)
                 len = prefix[len - 1];
             else
             {
-                prefix[i] = len;
+                prefix[i] = len; //0
                 i++;
             }
         }
@@ -65,7 +65,7 @@ void kmp_search(char text[], char pattern[])
         else
         {
             j = prefix[j];
-            if (j = -1)
+            if (j == -1)
             {
                 i++;
                 j++;
@@ -76,15 +76,15 @@ void kmp_search(char text[], char pattern[])
 int main()
 {
     char pattern[] = "ABABCABAA";
-    // int prefix[9];
-    // int n = 9;
-    // prefix_table(pattern, prefix, n);
-    // move_prefix_table(prefix, 9);
-    // for (int i = 0; i < n; i++)
-    // {
-    //     printf("%d\n", prefix[i]);
-    // }
-    char text[] = "ABABABCABAABABABAB";
-    kmp_search(text, pattern);
+    int prefix[9];
+    int n = 9;
+    prefix_table(pattern, prefix, n);
+    move_prefix_table(prefix, 9);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d\n", prefix[i]);
+    }
+    // char text[] = "ABABABCABAABABABAB";
+    // kmp_search(text, pattern);
     return 0;
 }
